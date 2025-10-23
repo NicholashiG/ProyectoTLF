@@ -2,6 +2,12 @@
 
 Aplicación de consola en Python que solicita un texto al usuario y muestra información sobre él, implementada usando el patrón arquitectónico MVC (Modelo-Vista-Controlador).
 
+Presentado por:
+
+Diego Alejandro Carvajal Camargo
+Nicolás Jurado Ramirez
+Johan Noé Londoño Salazar
+
 ## Estructura del Proyecto
 
 El proyecto sigue el patrón MVC:
