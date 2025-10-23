@@ -1,0 +1,28 @@
+# Requisitos del Sistema de Análisis Léxico y Validación de Patrones
+# ProyectoTLF - Universidad del Quindío
+
+# Dependencias principales
+matplotlib>=3.7.0
+seaborn>=0.12.0
+numpy>=1.24.0
+
+# Dependencias opcionales para funcionalidades adicionales
+pandas>=2.0.0
+pillow>=10.0.0
+
+# Para desarrollo y testing (opcional)
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Nota: Las siguientes librerías son parte de la biblioteca estándar de Python
+# y no necesitan instalación adicional:
+# - re (expresiones regulares)
+# - json (manejo de JSON)
+# - csv (manejo de CSV)
+# - datetime (manejo de fechas)
+# - os (operaciones del sistema)
+# - typing (anotaciones de tipos)
+# - enum (enumeraciones)
+# - statistics (estadísticas básicas)
+# - base64 (codificación)
+# - collections (estructuras de datos adicionales)
