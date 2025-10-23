@@ -6,6 +6,10 @@ matplotlib>=3.7.0
 seaborn>=0.12.0
 numpy>=1.24.0
 
+# GUI - PyQt5 para interfaz gráfica
+PyQt5>=5.15.0
+PyQt5-tools>=5.15.0
+
 # Dependencias opcionales para funcionalidades adicionales
 pandas>=2.0.0
 pillow>=10.0.0

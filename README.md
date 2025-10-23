@@ -1,6 +1,6 @@
 # ProyectoTLF - Sistema de Análisis Léxico y Validación de Patrones
 
-Sistema completo de análisis léxico y validación de patrones implementado en Python usando el patrón arquitectónico MVC (Modelo-Vista-Controlador). El sistema puede identificar, extraer y validar múltiples tipos de patrones en texto utilizando expresiones regulares y técnicas de análisis léxico.
+Sistema completo de análisis léxico y validación de patrones implementado en Python usando el patrón arquitectónico MVC (Modelo-Vista-Controlador). El sistema incluye tanto **interfaz de consola tradicional** como **interfaz gráfica moderna desarrollada con PyQt5**, permitiendo identificar, extraer y validar múltiples tipos de patrones en texto con visualizaciones interactivas y análisis estadístico avanzado.
 
 **Presentado por:**
 - Diego Alejandro Carvajal Camargo
@@ -33,6 +33,13 @@ ProyectoTLF/
 │   │   ├── model.py                 # Modelo con análisis avanzado
 │   │   ├── view.py                  # Vista con interfaz mejorada
 │   │   └── controller.py            # Controlador con menú expandido
+│   ├── 📁 gui/                      # Interfaz gráfica PyQt5
+│   │   ├── main_window.py           # Ventana principal GUI
+│   │   ├── 📁 widgets/              # Widgets especializados
+│   │   │   ├── statistics_widgets.py  # Widgets de estadísticas
+│   │   │   └── graph_widgets.py     # Widgets de gráficos matplotlib
+│   │   └── 📁 styles/               # Estilos CSS
+│   │       └── main.css             # Tema moderno profesional
 │   ├── 📁 patterns/                 # Expresiones regulares
 │   │   └── patterns.py              # Validador de patrones
 │   ├── 📁 analysis/                 # Análisis léxico y estadísticas
@@ -85,6 +92,7 @@ El sistema puede detectar y validar los siguientes patrones:
 - **matplotlib >= 3.7.0** - Generación de gráficos
 - **seaborn >= 0.12.0** - Visualizaciones estadísticas mejoradas  
 - **numpy >= 1.24.0** - Operaciones numéricas
+- **PyQt5 >= 5.15.0** - Interfaz gráfica moderna
 
 ### Instalación de Dependencias
 ```bash
@@ -98,17 +106,24 @@ python setup.py
 
 ## 🚀 Cómo Ejecutar
 
-### Aplicación Principal
+### 🖥️ Interfaz Gráfica Moderna (Recomendado)
+```bash
+python gui_main.py
+```
+> Nueva interfaz gráfica con PyQt5, visualizaciones interactivas y análisis en tiempo real
+
+### 💻 Aplicación de Consola
 ```bash
 python main.py
 ```
+> Interfaz tradicional de línea de comandos
 
-### Demostración Interactiva
+### 🎬 Demostración Interactiva
 ```bash
 python demo.py
 ```
 
-### Casos de Prueba
+### 🧪 Casos de Prueba
 ```bash
 python test_cases.py
 ```

@@ -1,0 +1,571 @@
+/*
+Estilos CSS para el Sistema de Análisis Léxico
+Universidad del Quindío - Teoría de Lenguajes Formales
+*/
+
+/* ========================= CONFIGURACIÓN GENERAL ========================= */
+
+QMainWindow {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #f8f9fa, stop: 1 #e9ecef
+    );
+    color: #212529;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11px;
+}
+
+/* ========================= MENÚ Y BARRA DE HERRAMIENTAS ========================= */
+
+QMenuBar {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ffffff, stop: 1 #f8f9fa
+    );
+    border-bottom: 1px solid #dee2e6;
+    padding: 4px;
+    font-weight: 500;
+}
+
+QMenuBar::item {
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+QMenuBar::item:selected {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #007bff, stop: 1 #0056b3
+    );
+    color: white;
+}
+
+QMenu {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+QMenu::item {
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin: 1px;
+}
+
+QMenu::item:selected {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #007bff, stop: 1 #0056b3
+    );
+    color: white;
+}
+
+QToolBar {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ffffff, stop: 1 #f8f9fa
+    );
+    border-bottom: 1px solid #dee2e6;
+    spacing: 8px;
+    padding: 4px;
+}
+
+QToolBar::separator {
+    background: #dee2e6;
+    width: 1px;
+    margin: 4px;
+}
+
+/* ========================= BARRA DE ESTADO ========================= */
+
+QStatusBar {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #f8f9fa, stop: 1 #e9ecef
+    );
+    border-top: 1px solid #dee2e6;
+    color: #495057;
+    font-weight: 500;
+    padding: 4px;
+}
+
+/* ========================= BOTONES ========================= */
+
+QPushButton {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #007bff, stop: 1 #0056b3
+    );
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 12px;
+    min-height: 16px;
+    text-align: center;
+}
+
+QPushButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #0056b3, stop: 1 #004085
+    );
+    transform: translateY(-1px);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #004085, stop: 1 #002752
+    );
+    transform: translateY(1px);
+}
+
+QPushButton:disabled {
+    background: #6c757d;
+    color: #adb5bd;
+}
+
+/* Botones específicos con colores temáticos */
+QPushButton#analyzeButton {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #28a745, stop: 1 #1e7e34
+    );
+}
+
+QPushButton#analyzeButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #1e7e34, stop: 1 #155724
+    );
+}
+
+QPushButton#clearButton {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #dc3545, stop: 1 #c82333
+    );
+}
+
+QPushButton#clearButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #c82333, stop: 1 #a71e2a
+    );
+}
+
+QPushButton#statsButton {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #17a2b8, stop: 1 #138496
+    );
+}
+
+QPushButton#statsButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #138496, stop: 1 #0f6674
+    );
+}
+
+QPushButton#graphsButton {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #fd7e14, stop: 1 #e85a00
+    );
+}
+
+QPushButton#graphsButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #e85a00, stop: 1 #cc5500
+    );
+}
+
+QPushButton#exportButton, 
+QPushButton#exportHtmlButton,
+QPushButton#exportJsonButton,
+QPushButton#exportCsvButton {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #6f42c1, stop: 1 #5a32a3
+    );
+}
+
+QPushButton#exportButton:hover,
+QPushButton#exportHtmlButton:hover,
+QPushButton#exportJsonButton:hover,
+QPushButton#exportCsvButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #5a32a3, stop: 1 #4c2a85
+    );
+}
+
+/* ========================= GRUPOS Y CONTENEDORES ========================= */
+
+QGroupBox {
+    font-weight: 600;
+    font-size: 13px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ffffff, stop: 1 #f8f9fa
+    );
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 4px 8px;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    color: #495057;
+}
+
+QFrame {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin: 2px;
+}
+
+/* ========================= TABS Y PESTAÑAS ========================= */
+
+QTabWidget {
+    background: transparent;
+}
+
+QTabWidget::pane {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: #ffffff;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #f8f9fa, stop: 1 #e9ecef
+    );
+    border: 1px solid #dee2e6;
+    padding: 12px 20px;
+    margin-right: 2px;
+    border-radius: 8px 8px 0 0;
+    font-weight: 500;
+    min-width: 100px;
+}
+
+QTabBar::tab:selected {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #007bff, stop: 1 #0056b3
+    );
+    color: white;
+    border-bottom: 1px solid #007bff;
+}
+
+QTabBar::tab:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #e2e6ea, stop: 1 #dae0e5
+    );
+}
+
+/* ========================= CAMPOS DE TEXTO ========================= */
+
+QTextEdit {
+    background: #ffffff;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 12px;
+    color: #495057;
+    selection-background-color: #007bff;
+    selection-color: white;
+}
+
+QTextEdit:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+QTextEdit:read-only {
+    background: #f8f9fa;
+    color: #6c757d;
+}
+
+/* ========================= ETIQUETAS ========================= */
+
+QLabel {
+    color: #495057;
+    font-size: 12px;
+    padding: 4px;
+}
+
+QLabel[class="title"] {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529;
+    padding: 8px;
+}
+
+QLabel[class="subtitle"] {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757d;
+    padding: 6px;
+}
+
+QLabel[class="stat"] {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+QLabel[class="success"] {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+QLabel[class="info"] {
+    color: #0c5460;
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+}
+
+QLabel[class="warning"] {
+    color: #856404;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+}
+
+QLabel[class="error"] {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* ========================= BARRAS DE PROGRESO ========================= */
+
+QProgressBar {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+    text-align: center;
+    font-weight: 600;
+    height: 20px;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #007bff, stop: 1 #0056b3
+    );
+    border-radius: 6px;
+    margin: 1px;
+}
+
+/* ========================= ÁREAS DE SCROLL ========================= */
+
+QScrollArea {
+    background: transparent;
+    border: none;
+}
+
+QScrollBar:vertical {
+    background: #f8f9fa;
+    width: 12px;
+    border-radius: 6px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #ced4da, stop: 1 #adb5bd
+    );
+    border-radius: 6px;
+    min-height: 20px;
+    margin: 2px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #adb5bd, stop: 1 #868e96
+    );
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar:horizontal {
+    background: #f8f9fa;
+    height: 12px;
+    border-radius: 6px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ced4da, stop: 1 #adb5bd
+    );
+    border-radius: 6px;
+    min-width: 20px;
+    margin: 2px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #adb5bd, stop: 1 #868e96
+    );
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+/* ========================= SPLITTERS ========================= */
+
+QSplitter::handle {
+    background: #dee2e6;
+}
+
+QSplitter::handle:horizontal {
+    width: 3px;
+    margin: 2px 0;
+    border-radius: 1px;
+}
+
+QSplitter::handle:vertical {
+    height: 3px;
+    margin: 0 2px;
+    border-radius: 1px;
+}
+
+QSplitter::handle:hover {
+    background: #007bff;
+}
+
+/* ========================= TOOLTIPS ========================= */
+
+QToolTip {
+    background: #343a40;
+    color: white;
+    border: 1px solid #495057;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 240;
+}
+
+/* ========================= ANIMACIONES Y EFECTOS ========================= */
+
+QPushButton {
+    transition: all 0.3s ease;
+}
+
+QTabBar::tab {
+    transition: all 0.2s ease;
+}
+
+QGroupBox {
+    transition: all 0.2s ease;
+}
+
+/* ========================= RESPONSIVE DESIGN ========================= */
+
+QMainWindow[width="800"] QTabBar::tab {
+    min-width: 80px;
+    padding: 8px 12px;
+}
+
+QMainWindow[width="600"] QTabBar::tab {
+    min-width: 60px;
+    padding: 6px 8px;
+    font-size: 10px;
+}
+
+/* ========================= MODO OSCURO (OPCIONAL) ========================= */
+
+QMainWindow[darkMode="true"] {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #2c3e50, stop: 1 #34495e
+    );
+    color: #ecf0f1;
+}
+
+QMainWindow[darkMode="true"] QGroupBox {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #34495e, stop: 1 #2c3e50
+    );
+    border-color: #7f8c8d;
+    color: #ecf0f1;
+}
+
+QMainWindow[darkMode="true"] QTextEdit {
+    background: #2c3e50;
+    border-color: #7f8c8d;
+    color: #ecf0f1;
+}
+
+/* ========================= EFECTOS ADICIONALES ========================= */
+
+QFrame:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+QGroupBox:hover {
+    border-color: #007bff;
+}
+
+QPushButton:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* ========================= ICONOS Y EMOJIS ========================= */
+
+QPushButton[iconType="analyze"]::before {
+    content: "🔍 ";
+}
+
+QPushButton[iconType="stats"]::before {
+    content: "📊 ";
+}
+
+QPushButton[iconType="graphs"]::before {
+    content: "📈 ";
+}
+
+QPushButton[iconType="export"]::before {
+    content: "💾 ";
+}
+
+QPushButton[iconType="clear"]::before {
+    content: "🗑️ ";
+}
