@@ -4,8 +4,8 @@ Aplicación de consola en Python que solicita un texto al usuario y muestra info
 
 Presentado por:
 
-Diego Alejandro Carvajal Camargo
-Nicolás Jurado Ramirez
+Diego Alejandro Carvajal Camargo,
+Nicolás Jurado Ramirez,
 Johan Noé Londoño Salazar
 
 ## Estructura del Proyecto
